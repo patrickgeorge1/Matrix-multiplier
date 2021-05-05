@@ -1,17 +1,17 @@
-==15080== Memcheck, a memory error detector
-==15080== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==15080== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==15080== Command: ./tema2_opt_m /export/asc/tema2/input_valgrind
-==15080== 
+==27226== Memcheck, a memory error detector
+==27226== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==27226== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==27226== Command: ./tema2_opt_m /export/asc/tema2/input_valgrind
+==27226== 
 OPT SOLVER
-Run=./tema2_opt_m: N=400: Time=0.007837
+Run=./tema2_opt_m: N=400: Time=10.014268
 <<< Bonus=0p >>>
-==15080== 
-==15080== HEAP SUMMARY:
-==15080==     in use at exit: 0 bytes in 0 blocks
-==15080==   total heap usage: 4 allocs, 4 frees, 2,560,676 bytes allocated
-==15080== 
-==15080== All heap blocks were freed -- no leaks are possible
-==15080== 
-==15080== For lists of detected and suppressed errors, rerun with: -s
-==15080== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==27226== 
+==27226== HEAP SUMMARY:
+==27226==     in use at exit: 0 bytes in 0 blocks
+==27226==   total heap usage: 7 allocs, 7 frees, 6,400,676 bytes allocated
+==27226== 
+==27226== All heap blocks were freed -- no leaks are possible
+==27226== 
+==27226== For lists of detected and suppressed errors, rerun with: -s
+==27226== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

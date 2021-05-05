@@ -33,7 +33,7 @@ double* my_solver(int N, double *A, double* B) {
 		}	
 	}
 
-	// m_ABBt = m_AB * B
+	// m_ABBt = m_AB * Bt
 	for (i = 0; i < N; i++)
 	{
 		for (j = 0; j < N; j++)
