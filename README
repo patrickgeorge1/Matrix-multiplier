@@ -1,0 +1,51 @@
+Nume: Vitoga George Patrick
+Grupa/Serie: 332CA
+
+Neopt:
+    
+    I tackled the "unoptimised" version of algorithm using some 
+    additional matrices to store some of the partial results like
+    A * B, A * A' and A * B * B'.
+
+    The multiplication is using the basic "3-for loop way", but I took 
+    advantage that A is a upper triangular matrix, so I selected 
+    only the elements positioned after k in the third for-loop.
+
+    When I encountered an opperation with a transposed matrix as one 
+    of the opperands, I saved some computational effort by
+    replacing the "transpose" opperation with "iterating throungh columns".
+
+    The final matrix is made of sum of the partial matrices m_ABBt
+    and m_AtA.
+
+
+Opt:
+
+    The "optimised" version is an upgrade of "neopt". The update
+    consists of using pointers to iterate through matrices and also
+    using "register" for loop related constant variables.
+    
+    Also, in the last opperation, I removed a for-loop due to the 
+    ability to iterate using pointers, so I iterated up to N * N.
+
+    Using all this tricks, I managed to beat the "Unopt" version.
+
+
+Blas:
+
+    This version is the fastest among them all.
+    The "Basic Linear Algebra Subprograms" is amazing, because is
+    capable of doing the basic opperations in no time.
+
+    I used only the cblas_dtrmm() and cblas_dgemm().
+    With cblas_dtrmm(), I was able to multiply a triangular matrix 
+    with another matrix and with cblas_dgemm() I was able to multiply
+    any 2 matrices. Moreover, I even summed 2 matrices using cblas_dgemm()
+    intern capabilities. 
+
+
+Performances:
+
+
+
+

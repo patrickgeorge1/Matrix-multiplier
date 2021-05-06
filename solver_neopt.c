@@ -54,7 +54,7 @@ double* my_solver(int N, double *A, double* B) {
 		{
 			for (k = 0; k < N; k++)
 			{
-				if (k <= i) {
+				if (k <= j) {
 					m_AtA[i * N + j] += A[k * N + i] * A[k * N + j];
 				}
 			}

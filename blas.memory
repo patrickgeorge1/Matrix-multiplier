@@ -1,22 +1,22 @@
-==15720== Memcheck, a memory error detector
-==15720== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==15720== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==15720== Command: ./tema2_blas /export/asc/tema2/input_valgrind
-==15720== 
+==4567== Memcheck, a memory error detector
+==4567== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4567== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4567== Command: ./tema2_blas /export/asc/tema2/input_valgrind
+==4567== 
 BLAS SOLVER
-==15720== 
-==15720== HEAP SUMMARY:
-==15720==     in use at exit: 6,400,108 bytes in 6 blocks
-==15720==   total heap usage: 28 allocs, 22 frees, 6,428,900 bytes allocated
-==15720== 
-==15720== LEAK SUMMARY:
-==15720==    definitely lost: 0 bytes in 0 blocks
-==15720==    indirectly lost: 0 bytes in 0 blocks
-==15720==      possibly lost: 0 bytes in 0 blocks
-==15720==    still reachable: 6,400,108 bytes in 6 blocks
-==15720==         suppressed: 0 bytes in 0 blocks
-==15720== Reachable blocks (those to which a pointer was found) are not shown.
-==15720== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==15720== 
-==15720== For lists of detected and suppressed errors, rerun with: -s
-==15720== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==4567== 
+==4567== HEAP SUMMARY:
+==4567==     in use at exit: 6,400,108 bytes in 6 blocks
+==4567==   total heap usage: 28 allocs, 22 frees, 6,428,900 bytes allocated
+==4567== 
+==4567== LEAK SUMMARY:
+==4567==    definitely lost: 0 bytes in 0 blocks
+==4567==    indirectly lost: 0 bytes in 0 blocks
+==4567==      possibly lost: 0 bytes in 0 blocks
+==4567==    still reachable: 6,400,108 bytes in 6 blocks
+==4567==         suppressed: 0 bytes in 0 blocks
+==4567== Reachable blocks (those to which a pointer was found) are not shown.
+==4567== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==4567== 
+==4567== For lists of detected and suppressed errors, rerun with: -s
+==4567== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

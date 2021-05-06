@@ -1,30 +1,30 @@
-==15713== Cachegrind, a cache and branch-prediction profiler
-==15713== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
-==15713== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==15713== Command: ./tema2_neopt /export/asc/tema2/input_valgrind
-==15713== 
---15713-- warning: L3 cache found, using its data for the LL simulation.
---15713-- warning: specified LL cache: line_size 64  assoc 16  total_size 12,582,912
---15713-- warning: simulated LL cache: line_size 64  assoc 24  total_size 12,582,912
+==4560== Cachegrind, a cache and branch-prediction profiler
+==4560== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==4560== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==4560== Command: ./tema2_neopt /export/asc/tema2/input_valgrind
+==4560== 
+--4560-- warning: L3 cache found, using its data for the LL simulation.
+--4560-- warning: specified LL cache: line_size 64  assoc 16  total_size 12,582,912
+--4560-- warning: simulated LL cache: line_size 64  assoc 24  total_size 12,582,912
 NEOPT SOLVER
-Run=./tema2_neopt: N=400: Time=37.900845
-==15713== 
-==15713== I   refs:      6,561,933,974
-==15713== I1  misses:            1,351
-==15713== LLi misses:            1,319
-==15713== I1  miss rate:          0.00%
-==15713== LLi miss rate:          0.00%
-==15713== 
-==15713== D   refs:      3,409,144,175  (3,278,317,058 rd   + 130,827,117 wr)
-==15713== D1  misses:       76,631,507  (   76,580,325 rd   +      51,182 wr)
-==15713== LLd misses:          102,599  (       71,540 rd   +      31,059 wr)
-==15713== D1  miss rate:           2.2% (          2.3%     +         0.0%  )
-==15713== LLd miss rate:           0.0% (          0.0%     +         0.0%  )
-==15713== 
-==15713== LL refs:          76,632,858  (   76,581,676 rd   +      51,182 wr)
-==15713== LL misses:           103,918  (       72,859 rd   +      31,059 wr)
-==15713== LL miss rate:            0.0% (          0.0%     +         0.0%  )
-==15713== 
-==15713== Branches:        323,580,538  (  323,339,896 cond +     240,642 ind)
-==15713== Mispredicts:         809,798  (      809,651 cond +         147 ind)
-==15713== Mispred rate:            0.3% (          0.3%     +         0.1%   )
+Run=./tema2_neopt: N=400: Time=37.877224
+==4560== 
+==4560== I   refs:      6,561,932,627
+==4560== I1  misses:            1,358
+==4560== LLi misses:            1,325
+==4560== I1  miss rate:          0.00%
+==4560== LLi miss rate:          0.00%
+==4560== 
+==4560== D   refs:      3,409,143,488  (3,278,316,576 rd   + 130,826,912 wr)
+==4560== D1  misses:       76,631,120  (   76,579,934 rd   +      51,186 wr)
+==4560== LLd misses:          102,608  (       71,546 rd   +      31,062 wr)
+==4560== D1  miss rate:           2.2% (          2.3%     +         0.0%  )
+==4560== LLd miss rate:           0.0% (          0.0%     +         0.0%  )
+==4560== 
+==4560== LL refs:          76,632,478  (   76,581,292 rd   +      51,186 wr)
+==4560== LL misses:           103,933  (       72,871 rd   +      31,062 wr)
+==4560== LL miss rate:            0.0% (          0.0%     +         0.0%  )
+==4560== 
+==4560== Branches:        323,580,346  (  323,339,696 cond +     240,650 ind)
+==4560== Mispredicts:         812,171  (      812,022 cond +         149 ind)
+==4560== Mispred rate:            0.3% (          0.3%     +         0.1%   )

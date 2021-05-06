@@ -47,7 +47,7 @@ double* my_solver(int N, double *A, double *B) {
 		m_AtA, N
 	);
 
-	// m_ABBt = m_AB * B'  ==> basic matrix multiply
+	// m_AtA += m_AB * B'  ==> basic matrix multiply and addition
 	cblas_dgemm(
 		CblasRowMajor, CblasNoTrans, CblasTrans, 
 		N, N, N,
