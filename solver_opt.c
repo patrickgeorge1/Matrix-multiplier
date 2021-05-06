@@ -25,22 +25,17 @@ double* my_solver(int N, double *A, double* B) {
 	// m_AB = A * B, TODO
 	for (register int i = 0; i < N; i++)
 	{
-		register double *pointer_save_a = A + i * N;
+		register double *pointer_save_a = (double *) &(A[i * N]);
 		for (register int j = 0; j < N; j++)
 		{
 			register double *pointer_a = pointer_save_a;
-			register double *pointer_b = B + j;
+			register double *pointer_b = (double *) &(B[j]);
 			register double result = 0.0;
-			for (register double k = 0; k < N; k++)
+			for (register int k = 0; k < N; ++k, ++pointer_a, pointer_b += N)
 			{
-				if (k >= i) {
-					result += *pointer_a * *pointer_b;
-				}
-				pointer_a++;
-				pointer_b += N;
-
-				m_AB[i * N + j] = result;
+				result += (k >= i) ? (*pointer_a * *pointer_b) : 0;
 			}
+			m_AB[i * N + j] = result;
 		}	
 	}
 
@@ -48,18 +43,18 @@ double* my_solver(int N, double *A, double* B) {
 	// m_ABBt = m_AB * Bt
 	for (register int i = 0; i < N; i++)
 	{
-		register double *pointer_save_AB = m_AB + i * N;
+		register double *pointer_save_AB = (double *) &(m_AB[i * N]);
+
+		register double result;
 		for (register int j = 0; j < N; j++)
 		{
 			register double *pointer_AB = pointer_save_AB;
-			register double *pointer_Bt = B + j * N;
-			register double result = 0.0;
-			for (register double k = 0; k < N; k++)
-			{
+			register double *pointer_Bt = (double *) &(B[j * N]);
+			result = 0.0;
+
+			for (register int k = 0; k < N; k++, ++pointer_AB, ++pointer_Bt)
 				result += *pointer_AB * *pointer_Bt;
-				pointer_AB++;
-				pointer_Bt++;
-			}
+			
 			m_ABBt[i * N + j] = result;
 		}
 	}
@@ -67,29 +62,25 @@ double* my_solver(int N, double *A, double* B) {
 	// m_AtA = At * A
 	for (register int i = 0; i < N; i++)
 	{
-		register double *pointer_save_At= A + i;
+		register double *pointer_save_At= (double *) &(A[i]);
 		for (register int j = 0; j < N; j++)
 		{
-			register double *pointer_At = pointer_save_At;
-			register double *pointer_A = A + j;
 			register double result = 0.0;
-			for (register double k = 0; k <= i; k++)
-			{
-				result += *pointer_At * *pointer_A;
-				pointer_At += N;
-				pointer_A += N;
-			}
+			register double *pointer_At = pointer_save_At; 
+			register double *pointer_A = (double *) &(A[j]);
+			
+			for (register int k = 0; k <= i; ++k, pointer_At += N, pointer_A += N)
+				// inferior triunghiulara cu superior triunghiulara
+				if (k <= j) result += *pointer_At * *pointer_A;
+			
 			m_AtA[i * N + j] = result;
 		}
 	}
 
 	// m_ABBt = A * B * B' + A' * A
-	for (register int i = 0; i < N; i++)
+	for (register int i = 0; i < N * N; i++)
 	{
-		for (register int j = 0; j < N; j++)
-		{
-			m_ABBt[i * N + j] += m_AtA[i * N + j];
-		}
+			*(m_ABBt + i) += *(m_AtA + i);
 	}
 
 	// free additional memory

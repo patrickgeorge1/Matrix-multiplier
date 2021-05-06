@@ -26,9 +26,11 @@ double* my_solver(int N, double *A, double* B) {
 	{
 		for (j = 0; j < N; j++)
 		{
-			for (k = i; k < N; k++)
+			for (k = 0; k < N; k++)
 			{
-				m_AB[i * N + j] += A[i * N + k] * B[k * N + j];
+				if (k >= i) {
+					m_AB[i * N + j] += A[i * N + k] * B[k * N + j];
+				}
 			}
 		}	
 	}
@@ -50,9 +52,11 @@ double* my_solver(int N, double *A, double* B) {
 	{
 		for (j = 0; j < N; j++)
 		{
-			for (k = 0; k <= i; k++)
+			for (k = 0; k < N; k++)
 			{
-				m_AtA[i * N + j] += A[k * N + i] * A[k * N + j];
+				if (k <= i) {
+					m_AtA[i * N + j] += A[k * N + i] * A[k * N + j];
+				}
 			}
 		}
 	}
