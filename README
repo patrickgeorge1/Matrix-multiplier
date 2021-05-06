@@ -66,4 +66,7 @@ Performances:
 |  - Miss rate                    0.3%                 0.3%               0.9% |
 |------------------------------------------------------------------------------|
 
+Considering the input size and results, it s clear that Blas and Opt are better
+than Neopt.
+Results become even clearer when input size is increasing.
 
